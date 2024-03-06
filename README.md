@@ -1,3 +1,3 @@
 # luxBank
 
-salve
+salve salve
