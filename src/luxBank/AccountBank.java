@@ -1,5 +1,7 @@
 package luxBank;
 
+import java.util.Scanner;
+
 public class AccountBank {
 	
 	private String name;
@@ -7,11 +9,9 @@ public class AccountBank {
 	private Double balance;
 	private boolean accountOpen;
 	
-	public AccountBank(String name, String password) {
-		this.name = name;
-		this.password = password;
+	public AccountBank() {
 		this.balance = 0.0;
-		this.setAccountOpen(true);
+		this.setAccountOpen(false);
 	}
 
 	public String getName() {
@@ -46,6 +46,28 @@ public class AccountBank {
 		this.accountOpen = accountOpen;
 	}
 	
+	public void getUserData() {
+		
+		Scanner user = new Scanner(System.in);
+		
+		System.out.print("Você deseja criar sua conta? use [s/n]");
+		String createAccount = user.next().toLowerCase();
+		
+		if(createAccount.equals("s")) {
+			
+			System.out.print("LOGIN:");
+			this.name = user.next();
+			System.out.print("SENHA:");
+			this.password = user.next();
+			this.accountOpen = true;
+		}
+		
+		
+		
+		
+		user.close();
+	}
+	
 	public void accountStatus() {
 		System.out.println("========================================" +
 				"\nNAME: " + this.getName() + 
@@ -69,5 +91,20 @@ public class AccountBank {
 		}
 	}
 	
+	public void applicationView() {
+		System.out.println("===========================");
+		System.out.println("[1] INFORMAÇÕES DA CONTA");
+		System.out.println("[2] SACAR");
+		System.out.println("[3] DEPOSITAR");
+		System.out.println("[4] INVESTIR");
+		System.out.println("[5] FECHAR CONTA");
+		System.out.println("===========================");
+	}
+	
+	public void actionUser(int userChoose) {
+		if(userChoose == 1) {
+			this.accountStatus();
+		}
+	}
 	
 }
