@@ -63,8 +63,6 @@ public class AccountBank {
 		}
 		
 		
-		
-		
 		user.close();
 	}
 	
@@ -77,12 +75,12 @@ public class AccountBank {
 				"\n========================================");
 	}
 	
-	public void deposit(int depositAmount) {
+	public void deposit(double depositAmount) {
 		this.setBalance(this.getBalance() + depositAmount);
 		System.out.println("DEPÓSITO REALIZADO COM SUCESSO!" + "\nSALDO ATUAL: " + this.getBalance());
 	}
 	
-	public void withdraw(int withdrawAmount) {
+	public void withdraw(double withdrawAmount) {
 		if(this.getBalance() >= withdrawAmount) {
 			this.setBalance(this.getBalance() - withdrawAmount);
 			System.out.println("SAQUE CONCLUÍDO." + "\nSALDO ATUAL: " + this.getBalance());
@@ -101,10 +99,36 @@ public class AccountBank {
 		System.out.println("===========================");
 	}
 	
-	public void actionUser(int userChoose) {
-		if(userChoose == 1) {
-			this.accountStatus();
+	public void actionUser() {
+		Scanner userAction = new Scanner(System.in);
+		int action = userAction.nextInt();
+		
+		switch(action) {
+			case 1:
+				this.accountStatus();
+				break;
+			
+			case 2:
+				this.withdraw(userAction.nextDouble());
+				this.accountStatus();
+				break;
+			
+			case 3:
+				this.deposit(userAction.nextDouble());
+				this.accountStatus();
+				break;
+			case 4:
+				//
+				break;
+			case 5:
+				//
+				break;
+			default:
+				actionUser();
 		}
+		
+		userAction.close();
+		
 	}
 	
 }
