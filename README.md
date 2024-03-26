@@ -1,4 +1,4 @@
 # luxBank
 
 
-teste
+Mini-app de aplicação Bancária
