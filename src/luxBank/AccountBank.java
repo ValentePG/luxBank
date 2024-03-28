@@ -62,7 +62,7 @@ public class AccountBank {
 			this.accountOpen = true;
 		}
 		
-		
+		// Não posso fechar o Scanner aqui!
 		user.close();
 	}
 	
@@ -127,6 +127,7 @@ public class AccountBank {
 				actionUser();
 		}
 		
+		// Não posso fechar o Scanner aqui!
 		userAction.close();
 		
 	}
