@@ -1,4 +1,4 @@
 # luxBank
 
 
-teste
+Mini-app
