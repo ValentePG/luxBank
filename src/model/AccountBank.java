@@ -1,4 +1,4 @@
-package luxBank;
+package model;
 
 import java.util.Scanner;
 

@@ -1,8 +1,8 @@
-package luxBank;
+package client;
 
-//import java.util.Scanner;
+import model.AccountBank;
 
-public class LuxBank {
+public class Client {
 
 	public static void main(String[] args) {
 

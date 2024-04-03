@@ -1,4 +1,4 @@
-package luxBank;
+package model;
 
 public class MoneyRenderer {
 	
