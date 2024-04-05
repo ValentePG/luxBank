@@ -1,10 +1,8 @@
 package model;
 
-import java.util.Scanner;
-
 public class AccountBank {
 	
-	private String name;
+	private String user;
 	private String password;
 	private Double balance;
 	private boolean accountOpen;
@@ -15,11 +13,11 @@ public class AccountBank {
 	}
 
 	public String getName() {
-		return name;
+		return user;
 	}
 	
 	public void setName(String name) {
-		this.name = name;
+		this.user = name;
 	}
 	
 	public String getPassword() {
@@ -46,90 +44,5 @@ public class AccountBank {
 		this.accountOpen = accountOpen;
 	}
 	
-	public void getUserData() {
-		
-		Scanner user = new Scanner(System.in);
-		
-		System.out.print("Você deseja criar sua conta? use [s/n]");
-		String createAccount = user.next().toLowerCase();
-		
-		if(createAccount.equals("s")) {
-			
-			System.out.print("LOGIN:");
-			this.name = user.next();
-			System.out.print("SENHA:");
-			this.password = user.next();
-			this.accountOpen = true;
-		}
-		
-		// Não posso fechar o Scanner aqui!
-		user.close();
-	}
-	
-	public void accountStatus() {
-		System.out.println("========================================" +
-				"\nNAME: " + this.getName() + 
-				"\nPASSWORD: " + this.getPassword() + 
-				"\nBALANCE: " + this.getBalance() +
-				"\nSTATUS: " + this.isAccountOpen() +
-				"\n========================================");
-	}
-	
-	public void deposit(double depositAmount) {
-		this.setBalance(this.getBalance() + depositAmount);
-		System.out.println("DEPÓSITO REALIZADO COM SUCESSO!" + "\nSALDO ATUAL: " + this.getBalance());
-	}
-	
-	public void withdraw(double withdrawAmount) {
-		if(this.getBalance() >= withdrawAmount) {
-			this.setBalance(this.getBalance() - withdrawAmount);
-			System.out.println("SAQUE CONCLUÍDO." + "\nSALDO ATUAL: " + this.getBalance());
-		} else {
-			System.out.println("NÃO PODE SACAR, SALDO INSUFICIENTE." + "\nSALDO ATUAL: "+ this.getBalance());
-		}
-	}
-	
-	public void applicationView() {
-		System.out.println("===========================");
-		System.out.println("[1] INFORMAÇÕES DA CONTA");
-		System.out.println("[2] SACAR");
-		System.out.println("[3] DEPOSITAR");
-		System.out.println("[4] INVESTIR");
-		System.out.println("[5] FECHAR CONTA");
-		System.out.println("===========================");
-	}
-	
-	public void actionUser() {
-		Scanner userAction = new Scanner(System.in);
-		int action = userAction.nextInt();
-		
-		switch(action) {
-			case 1:
-				this.accountStatus();
-				break;
-			
-			case 2:
-				this.withdraw(userAction.nextDouble());
-				this.accountStatus();
-				break;
-			
-			case 3:
-				this.deposit(userAction.nextDouble());
-				this.accountStatus();
-				break;
-			case 4:
-				//
-				break;
-			case 5:
-				//
-				break;
-			default:
-				actionUser();
-		}
-		
-		// Não posso fechar o Scanner aqui!
-		userAction.close();
-		
-	}
-	
+
 }

@@ -1,4 +1,4 @@
-package model;
+package useCases;
 
 public class MoneyRenderer {
 	
