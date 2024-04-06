@@ -8,7 +8,7 @@ public class UserOptionTest {
 		
 		UserOption options = new UserOption();
 		options.getOptions();
-		options.setOptionsLength(20);
+		// options.setOptionsLength(20);
 		System.out.println(options.getOptionsLength());
 		options.getOptions();
 

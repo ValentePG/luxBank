@@ -12,6 +12,8 @@ public class UserOption {
 		this.initialOptions(options);
 	}
 	
+	// USER Methods
+	
 	public ArrayList<Integer> getOptions() {
 		System.out.println(options);
 		return options;
@@ -22,10 +24,24 @@ public class UserOption {
 		return optionsLength;
 	}
 	
-	public void setOptionsLength(int optionsLength) {
-		this.optionsLength = optionsLength;
-		this.addOptions(options);
-	}
+	
+	// ADM Methods
+	
+//	private void setOptionsLength(int optionsLength) {
+//		this.optionsLength = optionsLength;
+//		this.addOptions(options);
+//	}
+	
+//	private ArrayList<Integer> addOptions(ArrayList<Integer> options){ 
+//		
+//		for(int i = options.size() + 1; i <= this.optionsLength; i++) {
+//			options.add(i);
+//		}
+//		
+//		return options;
+//	}
+
+	// CLASS Methods
 	
 	private ArrayList<Integer> initialOptions(ArrayList<Integer> options){
 		for(int i = 1; i <= this.optionsLength; i++) {
@@ -33,14 +49,4 @@ public class UserOption {
 		}
 		return options;
 	}
-	
-	private ArrayList<Integer> addOptions(ArrayList<Integer> options){
-		
-		for(int i = options.size() + 1; i <= this.optionsLength; i++) {
-			options.add(i);
-		}
-		
-		return options;
-	}
-
 }
