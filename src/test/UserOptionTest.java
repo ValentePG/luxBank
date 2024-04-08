@@ -10,7 +10,7 @@ public class UserOptionTest {
 		options.getOptions();
 		// options.setOptionsLength(20);
 		System.out.println(options.getOptionsLength());
-		options.getOptions();
+
 
 	}
 

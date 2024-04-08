@@ -20,7 +20,6 @@ public class UserOption {
 	}
 	
 	public int getOptionsLength() {
-		System.out.println(optionsLength);
 		return optionsLength;
 	}
 	
