@@ -1,5 +1,5 @@
-package useCases;
-
-public class MoneyRenderer {
-	
-}
+//package useCases;
+//
+//public class MoneyRenderer {
+//	
+//}

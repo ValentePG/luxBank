@@ -1,5 +1,7 @@
 package model;
 
+import useCases.Deposit;
+
 public class AccountBank {
 	
 	private String user;
@@ -9,7 +11,7 @@ public class AccountBank {
 	
 	public AccountBank() {
 		this.balance = 0.0;
-		this.setAccountOpen(false);
+		this.setAccountOpen(true);
 	}
 
 	public String getName() {
@@ -42,6 +44,13 @@ public class AccountBank {
 
 	public void setAccountOpen(boolean accountOpen) {
 		this.accountOpen = accountOpen;
+	}
+	
+	public void deposit(Double depositAmount) {
+		Deposit deposit = new Deposit(depositAmount);
+		Double newBalance = deposit.getBalanceAfter();
+		this.setBalance(newBalance);
+		
 	}
 	
 
