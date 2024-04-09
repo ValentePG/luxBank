@@ -9,10 +9,10 @@ public class Client {
 		
 		AccountBank account1 = new AccountBank();
 		account1.deposit(500.0);
-		account1.deposit(10000.0);
-		
-		
-		
+		System.out.println(account1.getBalance());
+		account1.deposit(1000.0);
+		System.out.println(account1.getBalance());
+		account1.viewAccountStatus();
 	}
 
 }

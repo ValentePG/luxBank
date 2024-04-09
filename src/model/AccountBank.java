@@ -1,11 +1,12 @@
 package model;
 
+import useCases.AccountStatus;
 import useCases.Deposit;
 
 public class AccountBank {
 	
-	private String user;
-	private String password;
+	private String user = "Gabriel";
+	private String password = "90909090";
 	private Double balance;
 	private boolean accountOpen;
 	
@@ -47,10 +48,18 @@ public class AccountBank {
 	}
 	
 	public void deposit(Double depositAmount) {
-		Deposit deposit = new Deposit(depositAmount);
-		Double newBalance = deposit.getBalanceAfter();
-		this.setBalance(newBalance);
-		
+		if(this.isAccountOpen()) {
+			Deposit deposit = new Deposit(depositAmount, this.getBalance());
+			this.setBalance(deposit.getBalanceAfter());
+		} else {
+			System.out.println("Não foi possível realizar o depósito. \nVocê deve abrir sua conta para depositar!");
+		}
+	}
+	
+	
+	
+	public AccountStatus viewAccountStatus() {
+		return new AccountStatus(this.getName(), this.getPassword(), this.getBalance());
 	}
 	
 
