@@ -62,5 +62,7 @@ public class AccountBank {
 		return new AccountStatus(this.getName(), this.getPassword(), this.getBalance());
 	}
 	
-
+//	public void withDraw(Double depositAmount) {
+//		
+//	}
 }
