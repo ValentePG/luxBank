@@ -1,19 +1,17 @@
-package useCases;
+package model.options;
 
-import model.Options;
-
-public class Deposit implements Options {
+public class Deposit extends Options {
 	
-	private int ID = 2;
 	private Double depositAmount;
 	private Double balanceBefore;
 	private Double balanceAfter;
 	
 
 	public Deposit(Double depositAmount, Double balance) {
+		this.setID(1);
 		this.depositAmount = depositAmount;
 		this.balanceBefore = balance;
-		this.classAction();
+		this.optionAction();
 	}
 	
 	
@@ -35,13 +33,7 @@ public class Deposit implements Options {
 	}
 	
 	@Override
-	public int getID() {
-		return this.ID;
-	}
-
-
-	@Override
-	public void classAction() {
+	public void optionAction() {
 		this.setBalanceAfter(this.getBalanceBefore() + depositAmount);
 		System.out.println("DEPÓSITO REALIZADO COM SUCESSO!" + "\nSALDO ATUAL: " + this.getBalanceAfter() + 
 							"\nSALDO ANTERIOR: " + this.getBalanceBefore());

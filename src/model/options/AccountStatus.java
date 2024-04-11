@@ -1,28 +1,21 @@
-package useCases;
+package model.options;
 
-import model.Options;
+public class AccountStatus extends Options{
 
-public class AccountStatus implements Options{
-
-	private int ID = 1;
-	private String name;
-	private String password;
+	private String name; // Tipo será mudado para objeto de valor User
+	private String password; // Tipo será mudado para objeto de valor Password
 	private Double balance;
 
 	public AccountStatus(String name, String password, Double balance) {
+		this.setID(2);
 		this.name = name;
 		this.password = password;
 		this.balance = balance;
-		this.classAction();
+		this.optionAction();
 	}
 	
 	@Override
-	public int getID(){
-		return this.ID;
-	}
-
-	@Override
-	public void classAction() {
+	public void optionAction() {
 		System.out.println("========================================" +
 				"\nNAME: " + name + 
 				"\nPASSWORD: " + password + 

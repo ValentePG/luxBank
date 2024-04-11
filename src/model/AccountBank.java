@@ -1,7 +1,7 @@
 package model;
 
-import useCases.AccountStatus;
-import useCases.Deposit;
+import model.options.AccountStatus;
+import model.options.Deposit;
 
 public class AccountBank {
 	
@@ -48,7 +48,7 @@ public class AccountBank {
 	}
 	
 	public void deposit(Double depositAmount) {
-		if(this.isAccountOpen()) {
+		if(this.isAccountOpen()) { // Bloco IF pode ser removido!
 			Deposit deposit = new Deposit(depositAmount, this.getBalance());
 			this.setBalance(deposit.getBalanceAfter());
 		} else {
@@ -56,13 +56,11 @@ public class AccountBank {
 		}
 	}
 	
-	
-	
-	public AccountStatus viewAccountStatus() {
+	public AccountStatus getAccountStatus() {
 		return new AccountStatus(this.getName(), this.getPassword(), this.getBalance());
 	}
 	
-//	public void withDraw(Double depositAmount) {
-//		
-//	}
+	public void withDraw(Double depositAmount) {
+		
+	}
 }

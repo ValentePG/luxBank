@@ -1,18 +1,18 @@
-//package useCases;
-//
-//import java.util.ArrayList;
-//import model.UserOption;
-//
-//public class UserAction{
-//	
-//	// Injetar UserOption
-//	private UserOption option = new UserOption();
-//	private ArrayList<Integer> action = option.getOptions();
-//	
-//	
-//	public void chooseOne(int choice) {
-//		action.forEach((option) -> System.out.println("Teste"));
-//	}
-//	
-//	
-//}
+package useCases;
+
+import model.AccountBank;
+
+public class UserAction {
+
+	public static void main(String[] args) {
+
+		
+		AccountBank account1 = new AccountBank();
+		account1.deposit(500.0);
+		System.out.println(account1.getBalance());
+		account1.deposit(1000.0);
+		System.out.println(account1.getBalance());
+		account1.getAccountStatus();
+	}
+
+}
