@@ -1,6 +1,7 @@
-//package useCases;
-//
-//public class WithDraw {
+package model.options;
+
+
+//public class WithDraw extends Options {
 //	
 //	public void withdraw(double withdrawAmount) {
 //		if(this.getBalance() >= withdrawAmount) {
@@ -11,6 +12,5 @@
 //		}
 //	}
 //}
-package model.options;
 
 

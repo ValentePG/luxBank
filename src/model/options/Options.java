@@ -2,7 +2,7 @@ package model.options;
 
 public abstract class Options {
 
-  protected int ID;
+  public int ID;
   public abstract void optionAction();
   
   public int getID() {
