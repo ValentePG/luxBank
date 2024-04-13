@@ -2,6 +2,7 @@ package model;
 
 import model.options.AccountStatus;
 import model.options.Deposit;
+import model.options.WithDraw;
 
 public class AccountBank {
 	
@@ -60,7 +61,8 @@ public class AccountBank {
 		return new AccountStatus(this.getName(), this.getPassword(), this.getBalance());
 	}
 	
-	public void withDraw(Double depositAmount) {
-		
+	public void withDraw(Double withDrawAmount) {
+		WithDraw withDraw = new WithDraw(this.getBalance(), withDrawAmount);
+		this.setBalance(withDraw.getBalanceAfter());
 	}
 }
