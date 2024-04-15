@@ -1,5 +1,11 @@
 package model;
 
 public class Password {
-	// Registro da senha e tratamento de erros
+
+	private String password;
+	
+	public String regex(String password) {
+		return password;
+		
+	}
 }
