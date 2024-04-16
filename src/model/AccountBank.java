@@ -6,8 +6,8 @@ import model.options.WithDraw;
 
 public class AccountBank {
 	
-	private String user = "Gabriel";
-	private String password = "9090";
+	private String user;
+	private String password;
 	private Double balance;
 	private boolean accountOpen;
 	

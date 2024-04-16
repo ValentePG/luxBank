@@ -1,4 +1,4 @@
-package model;
+package useCases.userRegister;
 
 public class Register implements UserRegister {
 	
@@ -8,31 +8,32 @@ public class Register implements UserRegister {
 	public Register(User user, Password password) {
 		this.user = user;
 		this.password = password;
-		this.createUser(user, password);
+		this.createAccount(user, password);
 	}
 	
 	@Override
-	public void createUser(User user, Password password) {
+	public void createAccount(User user, Password password) {
 		 
 		
 	}
 
-	public String getUser() {
-		return user.getUser();
+	public User getUser() {
+		return user;
 	}
 
 	public void setUser(User user) {
-		this.user.setUser(getUser());
+		this.user = user;
 	}
 
-	public String getPassword() {
-		return password.getPassword();
+	public Password getPassword() {
+		return password;
 	}
 
 	public void setPassword(Password password) {
-		this.password.setPassword(getPassword());
+		this.password = password;
 	}
 
+	
 	
 	
 }
