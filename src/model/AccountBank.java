@@ -3,35 +3,49 @@ package model;
 import model.options.AccountStatus;
 import model.options.Deposit;
 import model.options.WithDraw;
+import useCases.userRegister.Password;
+import useCases.userRegister.User;
 
 public class AccountBank {
 	
-	private String user;
-	private String password;
+	private User user;
+	private Password password;
 	private Double balance;
 	private boolean accountOpen;
 	
-	public AccountBank() {
+	public AccountBank(User user, Password password) {
+		this.user = user;
+		this.password = password;
 		this.balance = 0.0;
 		this.setAccountOpen(true);
 	}
+	
+	
+	
+//	public User getUser() {
+//		return user;
+//	}
+//										
+//
+//
+//	public void setUser(User user) {
+//		this.user = user;
+//	}
+//
+//														FUNCIONA
+//
+//	public Password getPassword() {
+//		return password;
+//	}
+//
+//
+//
+//	public void setPassword(Password password) {
+//		this.password = password;
+//	}
 
-	public String getName() {
-		return user;
-	}
-	
-	public void setName(String name) {
-		this.user = name;
-	}
-	
-	public String getPassword() {
-		return password;
-	}
-	
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	
+
+
 	public Double getBalance() {
 		return balance;
 	}
@@ -58,7 +72,7 @@ public class AccountBank {
 	}
 	
 	public AccountStatus getAccountStatus() {
-		return new AccountStatus(this.getName(), this.getPassword(), this.getBalance());
+		return new AccountStatus(this.user.getUser(), this.password.getPassword(), this.getBalance());
 	}
 	
 	public void withDraw(Double withDrawAmount) {

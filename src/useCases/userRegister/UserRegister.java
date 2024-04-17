@@ -1,8 +1,10 @@
 package useCases.userRegister;
 
+import model.AccountBank;
+
 public interface UserRegister {
 
-	public void createAccount(User user, Password password);
+	public AccountBank createAccount(User user, Password password);
 	
 	
 }

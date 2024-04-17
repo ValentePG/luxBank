@@ -1,5 +1,6 @@
 package useCases;
 
+import model.AccountBank;
 import useCases.userRegister.Password;
 import useCases.userRegister.Register;
 import useCases.userRegister.User;
@@ -11,20 +12,25 @@ public class UserAction {
 
 		User usuario = new User("Gabriel");
 		Password senha = new Password("909090");
-		Register registro = new Register(usuario, senha);
+		Register registro = new Register();
+		AccountBank conta1 = registro.createAccount(usuario, senha);
 		
-		System.out.println(usuario.getUser());
-		System.out.println(senha.getPassword());
+		conta1.getAccountStatus();
 		
-		System.out.println(registro.getUser());
-		System.out.println(registro.getPassword());
+		usuario.setUser("Leandro");
+		senha.setPassword("3030303030");
 		
-//		AccountBank account1 = new AccountBank();
-//		account1.deposit(500.0);
-//		System.out.println(account1.getBalance());
-//		account1.withDraw(200.0);
-//		System.out.println(account1.getBalance());
-//		account1.getAccountStatus();
+		conta1.getAccountStatus();
+		
+		conta1.deposit(500.0);
+		
+		System.out.println(conta1.getBalance());
+		
+		conta1.withDraw(200.0);
+		
+		System.out.println(conta1.getBalance());
+		
+		conta1.getAccountStatus();
 		
 		
 	}
