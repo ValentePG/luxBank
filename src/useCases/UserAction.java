@@ -14,6 +14,7 @@ public class UserAction {
 		Password senha = new Password("909090");
 		Register registro = new Register();
 		AccountBank conta1 = registro.createAccount(usuario, senha);
+
 		
 		conta1.getAccountStatus();
 		
