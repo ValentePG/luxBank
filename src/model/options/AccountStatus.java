@@ -7,7 +7,7 @@ public class AccountStatus extends Options{
 	private Double balance;
 
 	public AccountStatus(String name, String password, Double balance) {
-		this.setID(2);
+		this.setID(1);
 		this.name = name;
 		this.password = password;
 		this.balance = balance;

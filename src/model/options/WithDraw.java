@@ -9,7 +9,7 @@ public class WithDraw extends Options {
 	private boolean isValid;
 	
 	public WithDraw(Double balance, Double withDrawValue){	
-		this.setID(3);
+		this.setID(2);
 		this.balanceBefore = balance;
 		this.withDrawValue = withDrawValue;
 		this.isValid = true;

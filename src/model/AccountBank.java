@@ -3,6 +3,7 @@ package model;
 import model.options.AccountStatus;
 import model.options.Deposit;
 import model.options.WithDraw;
+import model.options.ApplicationView;
 import useCases.userRegister.Password;
 import useCases.userRegister.User;
 
@@ -10,6 +11,7 @@ public class AccountBank {
 	
 	private User user;
 	private Password password;
+//	private int NumberAccount;
 	private Double balance;
 	private boolean accountOpen;
 	
@@ -18,6 +20,7 @@ public class AccountBank {
 		this.password = password;
 		this.balance = 0.0;
 		this.setAccountOpen(true);
+		this.showMenu();
 	}
 	
 	
@@ -78,5 +81,9 @@ public class AccountBank {
 	public void withDraw(Double withDrawAmount) {
 		WithDraw withDraw = new WithDraw(this.getBalance(), withDrawAmount);
 		this.setBalance(withDraw.getBalanceAfter());
+	}
+	
+	public ApplicationView showMenu() {
+		return new ApplicationView();
 	}
 }

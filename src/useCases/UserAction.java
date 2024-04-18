@@ -12,26 +12,25 @@ public class UserAction {
 
 		User usuario = new User("Gabriel");
 		Password senha = new Password("909090");
-		Register registro = new Register();
-		AccountBank conta1 = registro.createAccount(usuario, senha);
-
+		Register registro = new Register(usuario, senha);
+		AccountBank conta1 = registro.createAccount();
 		
 		conta1.getAccountStatus();
-		
-		usuario.setUser("Leandro");
-		senha.setPassword("3030303030");
-		
-		conta1.getAccountStatus();
-		
-		conta1.deposit(500.0);
-		
-		System.out.println(conta1.getBalance());
-		
-		conta1.withDraw(200.0);
-		
-		System.out.println(conta1.getBalance());
-		
-		conta1.getAccountStatus();
+//		
+//		usuario.setUser("Leandro");
+//		senha.setPassword("3030303030");
+//		
+//		conta1.getAccountStatus();
+//		
+//		conta1.deposit(500.0);
+//		
+//		System.out.println(conta1.getBalance());
+//		
+//		conta1.withDraw(200.0);
+//		
+//		System.out.println(conta1.getBalance());
+//		
+//		conta1.getAccountStatus();
 		
 		
 	}

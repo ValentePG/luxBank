@@ -8,7 +8,7 @@ public class Deposit extends Options {
 	
 
 	public Deposit(Double depositAmount, Double balance) {
-		this.setID(1);
+		this.setID(3);
 		this.depositAmount = depositAmount;
 		this.balanceBefore = balance;
 		this.optionAction();
