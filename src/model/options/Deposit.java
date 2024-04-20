@@ -1,6 +1,6 @@
 package model.options;
 
-public class Deposit extends Options {
+public class Deposit implements Options {
 	
 	private Double depositAmount;
 	private Double balanceBefore;
@@ -8,7 +8,6 @@ public class Deposit extends Options {
 	
 
 	public Deposit(Double depositAmount, Double balance) {
-		this.setID(3);
 		this.depositAmount = depositAmount;
 		this.balanceBefore = balance;
 		this.optionAction();

@@ -1,7 +1,7 @@
 package model.options;
 
 
-public class WithDraw extends Options {
+public class WithDraw implements Options {
 	
 	private Double withDrawValue;
 	private Double balanceAfter;
@@ -9,7 +9,6 @@ public class WithDraw extends Options {
 	private boolean isValid;
 	
 	public WithDraw(Double balance, Double withDrawValue){	
-		this.setID(2);
 		this.balanceBefore = balance;
 		this.withDrawValue = withDrawValue;
 		this.isValid = true;
