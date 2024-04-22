@@ -6,7 +6,6 @@ public class Deposit implements Options {
 	private Double balanceBefore;
 	private Double balanceAfter;
 	
-
 	public Deposit(Double depositAmount, Double balance) {
 		this.depositAmount = depositAmount;
 		this.balanceBefore = balance;

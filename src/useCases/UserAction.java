@@ -16,21 +16,21 @@ public class UserAction {
 		UserRegister registro = new Register(usuario, senha);
 		AccountBank conta1 = registro.createAccount();
 		
-		conta1.getAccountStatus();
+//		conta1.getAccountStatus();
 		
-		usuario.setUser("Leandro");
-		senha.setPassword("30303030");
+//		usuario.setUser("Leandro");
+//		senha.setPassword("30303030");
 		
-		conta1.getAccountStatus();
+//		conta1.getAccountStatus();
 		
 		conta1.deposit(500.0);
 		
-		System.out.println(conta1.getBalance());
-		
+//		System.out.println(conta1.getBalance());
+//		
 		conta1.withDraw(200.0);
-		
-		System.out.println(conta1.getBalance());
-		
+//		
+//		System.out.println(conta1.getBalance());
+//		
 		conta1.getAccountStatus();
 		
 		

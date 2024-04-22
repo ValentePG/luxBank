@@ -51,7 +51,6 @@ public class WithDraw implements Options {
 	
 	@Override
 	public void optionAction() {
-		// TODO Auto-generated method stub
 		if(this.withDrawValid()) {
 			
 			this.setBalanceAfter(this.getBalanceBefore() - this.getWithDrawValue());

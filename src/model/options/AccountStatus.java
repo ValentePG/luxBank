@@ -2,8 +2,8 @@ package model.options;
 
 public class AccountStatus implements Options{
 
-	private String name; // Tipo será mudado para objeto de valor User
-	private String password; // Tipo será mudado para objeto de valor Password
+	private String name; 
+	private String password; 
 	private Double balance;
 
 	public AccountStatus(String name, String password, Double balance) {

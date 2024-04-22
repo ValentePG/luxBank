@@ -2,6 +2,7 @@ package useCases.userRegister;
 
 import model.AccountBank;
 
+
 public class Register implements UserRegister {
 	
 	private User user;
