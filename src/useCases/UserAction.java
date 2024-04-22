@@ -19,7 +19,7 @@ public class UserAction {
 		conta1.getAccountStatus();
 		
 		usuario.setUser("Leandro");
-		senha.setPassword("3030303030");
+		senha.setPassword("30303030");
 		
 		conta1.getAccountStatus();
 		
