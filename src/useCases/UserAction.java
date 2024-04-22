@@ -23,7 +23,7 @@ public class UserAction {
 		
 //		conta1.getAccountStatus();
 		
-		conta1.deposit(500.0);
+		conta1.deposit(conta1, 500.0);
 		
 //		System.out.println(conta1.getBalance());
 //		

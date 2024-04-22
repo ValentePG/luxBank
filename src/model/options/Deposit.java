@@ -1,26 +1,19 @@
 package model.options;
 
+import model.AccountBank;
+
 public class Deposit implements Options {
 	
 	private Double depositAmount;
 	private Double balanceBefore;
-	private Double balanceAfter;
+	private AccountBank conta1;
 	
-	public Deposit(Double depositAmount, Double balance) {
+	public Deposit(AccountBank conta1, Double depositAmount) {
 		this.depositAmount = depositAmount;
-		this.balanceBefore = balance;
+		this.conta1 = conta1;
+		this.balanceBefore = conta1.getBalance();
 		this.optionAction();
 	}
-	
-	
-	public Double getBalanceAfter() {
-		return balanceAfter;
-	}
-	
-	public Double setBalanceAfter(Double balanceAfter) {
-		return this.balanceAfter = balanceAfter;
-	}
-
 	
 	public double getBalanceBefore() {
 		return balanceBefore;
@@ -32,8 +25,9 @@ public class Deposit implements Options {
 	
 	@Override
 	public void optionAction() {
-		this.setBalanceAfter(this.getBalanceBefore() + depositAmount);
-		System.out.println("DEPÓSITO REALIZADO COM SUCESSO!" + "\nSALDO ATUAL: " + this.getBalanceAfter() + 
+		this.conta1.setBalance(this.getBalanceBefore() + depositAmount);
+//		this.setBalanceAfter(this.getBalanceBefore() + depositAmount);
+		System.out.println("DEPÓSITO REALIZADO COM SUCESSO!" + "\nSALDO ATUAL: " + this.conta1.getBalance() + 
 							"\nSALDO ANTERIOR: " + this.getBalanceBefore());
 			
 	}

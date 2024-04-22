@@ -44,11 +44,9 @@ public class AccountBank {
 		this.accountOpen = accountOpen;
 	}
 	
-	public void deposit(Double depositAmount) {
+	public Deposit deposit(AccountBank account, Double depositAmount) {
 		
-		Deposit deposit = new Deposit(depositAmount, this.getBalance());
-		this.setBalance(deposit.getBalanceAfter());
-		
+		return new Deposit(account, depositAmount);
 	}
 	
 	public AccountStatus getAccountStatus() {
