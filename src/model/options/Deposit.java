@@ -6,12 +6,12 @@ public class Deposit implements Options {
 	
 	private Double depositAmount;
 	private Double balanceBefore;
-	private AccountBank conta1;
+	private AccountBank account;
 	
-	public Deposit(AccountBank conta1, Double depositAmount) {
+	public Deposit(AccountBank account, Double depositAmount) {
 		this.depositAmount = depositAmount;
-		this.conta1 = conta1;
-		this.balanceBefore = conta1.getBalance();
+		this.account = account;
+		this.balanceBefore = this.account.getBalance();
 		this.optionAction();
 	}
 	
@@ -23,11 +23,10 @@ public class Deposit implements Options {
 		return this.balanceBefore = balanceBefore;
 	}
 	
-	@Override
 	public void optionAction() {
-		this.conta1.setBalance(this.getBalanceBefore() + depositAmount);
+		this.account.setBalance(this.getBalanceBefore() + this.depositAmount);
 //		this.setBalanceAfter(this.getBalanceBefore() + depositAmount);
-		System.out.println("DEPÓSITO REALIZADO COM SUCESSO!" + "\nSALDO ATUAL: " + this.conta1.getBalance() + 
+		System.out.println("DEPÓSITO REALIZADO COM SUCESSO!" + "\nSALDO ATUAL: " + this.account.getBalance() + 
 							"\nSALDO ANTERIOR: " + this.getBalanceBefore());
 			
 	}

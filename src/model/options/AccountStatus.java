@@ -1,25 +1,23 @@
 package model.options;
 
+import model.AccountBank;
+
 public class AccountStatus implements Options{
 
-	private String name; 
-	private String password; 
-	private Double balance;
-
-	public AccountStatus(String name, String password, Double balance) {
-		this.name = name;
-		this.password = password;
-		this.balance = balance;
+	private AccountBank account;
+	
+	public AccountStatus(AccountBank account) {
+		this.account = account;
 		this.optionAction();
 	}
 	
 	@Override
 	public void optionAction() {
 		System.out.println("========================================" +
-				"\nNAME: " + name + 
-				"\nPASSWORD: " + password + 
-				"\nBALANCE: " + balance +
-				"\nSTATUS: " + "CONTA ABERTA" +
+				"\nNAME: " + this.account.getUser() + 
+				"\nPASSWORD: " + this.account.getPassword() + 
+				"\nBALANCE: " + this.account.getBalance() +
+				"\nSTATUS: " + this.account.isAccountOpen() +
 				"\n========================================");
 	}
 }

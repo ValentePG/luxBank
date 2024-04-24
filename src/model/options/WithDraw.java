@@ -1,15 +1,17 @@
 package model.options;
 
+import model.AccountBank;
 
 public class WithDraw implements Options {
 	
 	private Double withDrawValue;
-	private Double balanceAfter;
 	private Double balanceBefore;
+	private AccountBank account;
 	private boolean isValid;
 	
-	public WithDraw(Double balance, Double withDrawValue){	
-		this.balanceBefore = balance;
+	public WithDraw(AccountBank account, Double withDrawValue){	
+		this.account = account;
+		this.balanceBefore = this.account.getBalance();
 		this.withDrawValue = withDrawValue;
 		this.isValid = true;
 		this.optionAction();
@@ -18,18 +20,6 @@ public class WithDraw implements Options {
 
 	public Double getWithDrawValue() {
 		return withDrawValue;
-	}
-
-	public void setWithDrawValue(Double withDrawValue) {
-		this.withDrawValue = withDrawValue;
-	}
-
-	public Double getBalanceAfter() {
-		return balanceAfter;
-	}
-
-	public void setBalanceAfter(Double balanceAfter) {
-		this.balanceAfter = balanceAfter;
 	}
 
 	public Double getBalanceBefore() {
@@ -53,8 +43,8 @@ public class WithDraw implements Options {
 	public void optionAction() {
 		if(this.withDrawValid()) {
 			
-			this.setBalanceAfter(this.getBalanceBefore() - this.getWithDrawValue());
-			System.out.println("Saque realizado com sucesso \nSALDO ATUAL:" + this.getBalanceAfter());
+			this.account.setBalance(this.getBalanceBefore() - this.getWithDrawValue());
+			System.out.println("Saque realizado com sucesso \nSALDO ATUAL:" + this.account.getBalance());
 			
 		}
 	}
@@ -62,7 +52,6 @@ public class WithDraw implements Options {
 	public boolean withDrawValid() {
 		if(this.getBalanceBefore() < this.getWithDrawValue()) {
 			System.out.println("Saldo menor que o valor de saque! \nSALDO ATUAL:" + this.getBalanceBefore());
-			this.setBalanceAfter(getBalanceBefore());
 			this.setValid(false);
 		} 
 		return this.isValid();

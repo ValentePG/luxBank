@@ -44,20 +44,28 @@ public class AccountBank {
 		this.accountOpen = accountOpen;
 	}
 	
+	public String getUser() {
+		return this.user.getUser();
+	}
+	
+	public String getPassword() {
+		return this.password.getPassword();
+	}
+	
 	public Deposit deposit(AccountBank account, Double depositAmount) {
 		
 		return new Deposit(account, depositAmount);
 	}
 	
-	public AccountStatus getAccountStatus() {
+
+	public AccountStatus getAccountStatus(AccountBank account) {
 		
-		return new AccountStatus(this.user.getUser(), this.password.getPassword(), this.getBalance());
+		return new AccountStatus(account);
 	}
 	
-	public void withDraw(Double withDrawAmount) {
+	public WithDraw withDraw(AccountBank account, Double withDrawAmount) {
 		
-		WithDraw withDraw = new WithDraw(this.getBalance(), withDrawAmount);
-		this.setBalance(withDraw.getBalanceAfter());
+		return new WithDraw(account, withDrawAmount);
 	}
 	
 	public ApplicationView showMenu() {
