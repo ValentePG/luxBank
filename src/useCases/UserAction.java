@@ -21,7 +21,6 @@ public class UserAction {
 		usuario.setUser("Leandro");
 		senha.setPassword("30303030");
 		
-//		conta1.getAccountStatus();
 		
 //		conta1.deposit(conta1, 200.0);
 		
