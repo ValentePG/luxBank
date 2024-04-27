@@ -30,7 +30,7 @@ public class UserAction {
 //		
 //		System.out.println(conta1.getBalance());
 //		
-		conta1.getAccountStatus(conta1);
+
 		
 		
 	}
