@@ -4,6 +4,7 @@ import model.options.AccountStatus;
 import model.options.WithDraw;
 import model.options.ApplicationView;
 import model.options.Deposit;
+import model.options.MoneyRenderer;
 import useCases.userRegister.Password;
 import useCases.userRegister.User;
 
@@ -66,6 +67,11 @@ public class AccountBank {
 	public WithDraw withDraw(AccountBank account, Double withDrawAmount) {
 		
 		return new WithDraw(account, withDrawAmount);
+	}
+	
+	public MoneyRenderer moneyRenderer(AccountBank account) {
+		
+		return new MoneyRenderer(account);
 	}
 	
 	public ApplicationView showMenu() {

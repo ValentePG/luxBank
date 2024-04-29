@@ -1,18 +1,22 @@
-//package model.options;
-//
-//public class MoneyRenderer extends Options{
-//
-//	public MoneyRenderer() {
-//		this.setID(4);
-//	}
-//	
-//	@Override
-//	public void optionAction() {
-//		// TODO Auto-generated method stub
-//		
-//	}
-//		
-//}
-//	
-//
-//
+package model.options;
+
+import model.AccountBank;
+
+public class MoneyRenderer implements Options{
+	
+	
+	public MoneyRenderer(AccountBank account) {
+		
+	}
+
+	
+	@Override
+	public void optionAction() {
+		// TODO Auto-generated method stub
+		
+	}
+		
+}
+	
+
+
