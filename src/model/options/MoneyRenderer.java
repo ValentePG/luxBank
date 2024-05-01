@@ -6,7 +6,7 @@ public class MoneyRenderer implements Options{
 	
 	
 	public MoneyRenderer(AccountBank account) {
-		
+		// teste
 	}
 
 	
