@@ -1,7 +1,6 @@
-# luxBank
+# Lab
 
 
-Mini-app
-
+Laboratório de Estudo
 
 
