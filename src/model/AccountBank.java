@@ -69,10 +69,10 @@ public class AccountBank {
 		return new WithDraw(account, withDrawAmount);
 	}
 	
-	public MoneyRenderer moneyRenderer(AccountBank account) {
-		
-		return new MoneyRenderer(account);
-	}
+//	public MoneyRenderer moneyRenderer(AccountBank account) {
+//		
+//		return new MoneyRenderer(account);
+//	}
 	
 	public ApplicationView showMenu() {
 		

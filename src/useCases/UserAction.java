@@ -1,6 +1,7 @@
 package useCases;
 
 import model.AccountBank;
+import model.options.MoneyRenderer;
 import useCases.userRegister.Password;
 import useCases.userRegister.Register;
 import useCases.userRegister.UserRegister;
@@ -22,16 +23,12 @@ public class UserAction {
 		senha.setPassword("30303030");
 		
 		
-//		conta1.deposit(conta1, 200.0);
+		conta1.deposit(conta1, 300.0);
 		
-//		System.out.println(conta1.getBalance());
-//		
-		conta1.withDraw(conta1, 510.0);
-//		
-//		System.out.println(conta1.getBalance());
-//		
-
+		MoneyRenderer money = new MoneyRenderer(conta1);
+		money.run();
 		
+		conta1.getAccountStatus(conta1);
 		
 	}
 
