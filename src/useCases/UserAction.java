@@ -25,10 +25,10 @@ public class UserAction {
 		
 		conta1.deposit(conta1, 300.0);
 		
-		MoneyRenderer money = new MoneyRenderer(conta1);
-		money.run();
-		
-		conta1.getAccountStatus(conta1);
+//		MoneyRenderer money = new MoneyRenderer(conta1);
+//		money.run();
+//		
+//		conta1.getAccountStatus(conta1);
 		
 	}
 
