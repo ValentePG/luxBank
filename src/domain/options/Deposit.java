@@ -1,6 +1,6 @@
-package model.options;
+package domain.options;
 
-import model.AccountBank;
+import domain.AccountBank;
 
 public class Deposit implements Options {
 	

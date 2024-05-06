@@ -1,4 +1,4 @@
-package model.options;
+package domain.options;
 
 public interface Options {
 

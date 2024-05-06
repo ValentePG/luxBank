@@ -1,7 +1,7 @@
-package useCases;
+package useCases.userAction;
 
-import model.AccountBank;
-import model.options.MoneyRenderer;
+import domain.AccountBank;
+import domain.options.MoneyRenderer;
 import useCases.userRegister.Password;
 import useCases.userRegister.Register;
 import useCases.userRegister.UserRegister;

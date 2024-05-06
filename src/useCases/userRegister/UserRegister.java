@@ -1,6 +1,6 @@
 package useCases.userRegister;
 
-import model.AccountBank;
+import domain.AccountBank;
 
 public interface UserRegister {
 
