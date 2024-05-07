@@ -14,7 +14,7 @@ public class WithDraw implements Options {
 		this.balanceBefore = this.account.getBalance();
 		this.withDrawValue = withDrawValue;
 		this.isValid = true;
-		this.optionAction();
+//		this.optionAction();
 	}
 
 

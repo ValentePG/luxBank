@@ -1,6 +1,9 @@
 package useCases.userAction;
 
+import java.util.ArrayList;
+
 import domain.AccountBank;
+import domain.options.Deposit;
 import domain.options.MoneyRenderer;
 import useCases.userRegister.Password;
 import useCases.userRegister.Register;
@@ -16,6 +19,14 @@ public class UserAction {
 		Password senha = new Password("909090");
 		UserRegister registro = new Register(usuario, senha);
 		AccountBank conta1 = registro.createAccount();
+//		ArrayList<Options> options = new ArrayList<>();
+//		options.add(new Deposit());
+//		options.add(new WithDraw());
+//		options.add(new AccountStatus());
+//		options.add(new MoneyRenderer());
+		
+		
+		
 		conta1.getAccountStatus(conta1);
 		
 		
@@ -25,10 +36,6 @@ public class UserAction {
 		
 		conta1.deposit(conta1, 300.0);
 		
-//		MoneyRenderer money = new MoneyRenderer(conta1);
-//		money.run();
-//		
-//		conta1.getAccountStatus(conta1);
 		
 	}
 

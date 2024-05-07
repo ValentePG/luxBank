@@ -8,7 +8,7 @@ public class AccountStatus implements Options{
 	
 	public AccountStatus(AccountBank account) {
 		this.account = account;
-		this.optionAction();
+//		this.optionAction();
 	}
 	
 	@Override
