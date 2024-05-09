@@ -1,23 +1,27 @@
 package domain.options;
 
+import java.util.Scanner;
+
 import domain.AccountBank;
 
 public class WithDraw implements Options {
 	
 	private Double withDrawValue;
 	private Double balanceBefore;
-	private AccountBank account;
 	private boolean isValid;
+	private Scanner input = new Scanner(System.in);
 	
-	public WithDraw(AccountBank account, Double withDrawValue){	
-		this.account = account;
-		this.balanceBefore = this.account.getBalance();
-		this.withDrawValue = withDrawValue;
+	public WithDraw(){	
+		
 		this.isValid = true;
-//		this.optionAction();
+
 	}
 
-
+	public void setWithDrawValue() {
+		System.out.println("Digite o valor de saque");
+		this.withDrawValue = input.nextDouble();
+	}
+	
 	public Double getWithDrawValue() {
 		return withDrawValue;
 	}
@@ -40,11 +44,13 @@ public class WithDraw implements Options {
 	}
 	
 	@Override
-	public void optionAction() {
+	public void optionAction(AccountBank account) {
+		this.setBalanceBefore(account.getBalance());
+		this.setWithDrawValue();
 		if(this.withDrawValid()) {
 			
-			this.account.setBalance(this.getBalanceBefore() - this.getWithDrawValue());
-			System.out.println("Saque realizado com sucesso \nSALDO ATUAL:" + this.account.getBalance());
+			account.setBalance(this.getBalanceBefore() - this.getWithDrawValue());
+			System.out.println("Saque realizado com sucesso \nSALDO ATUAL:" + account.getBalance());
 			
 		}
 	}

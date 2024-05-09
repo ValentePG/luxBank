@@ -4,20 +4,14 @@ import domain.AccountBank;
 
 public class AccountStatus implements Options{
 
-	private AccountBank account;
-	
-	public AccountStatus(AccountBank account) {
-		this.account = account;
-//		this.optionAction();
-	}
 	
 	@Override
-	public void optionAction() {
+	public void optionAction(AccountBank account) {
 		System.out.println("========================================" +
-				"\nNAME: " + this.account.getUser() + 
-				"\nPASSWORD: " + this.account.getPassword() + 
-				"\nBALANCE: " + this.account.getBalance() +
-				"\nSTATUS: " + this.account.isAccountOpen() +
+				"\nNAME: " + account.getUser() + 
+				"\nPASSWORD: " + account.getPassword() + 
+				"\nBALANCE: " + account.getBalance() +
+				"\nSTATUS: " + account.isAccountOpen() +
 				"\n========================================");
 	}
 }

@@ -3,8 +3,8 @@ package useCases.userAction;
 import java.util.ArrayList;
 
 import domain.AccountBank;
-import domain.options.Deposit;
-import domain.options.MoneyRenderer;
+import domain.options.MenuInitializer;
+import domain.options.Options;
 import useCases.userRegister.Password;
 import useCases.userRegister.Register;
 import useCases.userRegister.UserRegister;
@@ -19,22 +19,16 @@ public class UserAction {
 		Password senha = new Password("909090");
 		UserRegister registro = new Register(usuario, senha);
 		AccountBank conta1 = registro.createAccount();
-//		ArrayList<Options> options = new ArrayList<>();
-//		options.add(new Deposit());
-//		options.add(new WithDraw());
-//		options.add(new AccountStatus());
-//		options.add(new MoneyRenderer());
+		MenuInitializer menu = new MenuInitializer();
+		ArrayList<Options> options = menu.createList();
 		
+		options.get(0).optionAction(conta1);
 		
+		options.get(1).optionAction(conta1);
 		
-		conta1.getAccountStatus(conta1);
+		options.get(2).optionAction(conta1);
 		
-		
-		usuario.setUser("Leandro");
-		senha.setPassword("30303030");
-		
-		
-		conta1.deposit(conta1, 300.0);
+
 		
 		
 	}

@@ -1,19 +1,14 @@
 package domain.options;
 
+import java.util.Scanner;
+
 import domain.AccountBank;
 
 public class Deposit implements Options {
 	
 	private Double depositAmount;
 	private Double balanceBefore;
-	private AccountBank account;
-	
-	public Deposit(AccountBank account, Double depositAmount) {
-		this.depositAmount = depositAmount;
-		this.account = account;
-		this.balanceBefore = this.account.getBalance();
-		this.optionAction();
-	}
+	private Scanner input = new Scanner(System.in);
 	
 	public double getBalanceBefore() {
 		return balanceBefore;
@@ -23,10 +18,20 @@ public class Deposit implements Options {
 		return this.balanceBefore = balanceBefore;
 	}
 	
-	public void optionAction() {
-		this.account.setBalance(this.getBalanceBefore() + this.depositAmount);
-//		this.setBalanceAfter(this.getBalanceBefore() + depositAmount);
-		System.out.println("DEPÓSITO REALIZADO COM SUCESSO!" + "\nSALDO ATUAL: " + this.account.getBalance() + 
+	public double getDepositAmount() {
+		return depositAmount;
+	}
+	
+	public void setDepositAmount() {
+		System.out.println("Digite o valor de depósito");
+		this.depositAmount = input.nextDouble();
+	}
+	
+	public void optionAction(AccountBank account) {
+		this.setDepositAmount();
+		this.setBalanceBefore(account.getBalance());
+		account.setBalance(this.getBalanceBefore() + this.getDepositAmount());
+		System.out.println("DEPÓSITO REALIZADO COM SUCESSO!" + "\nSALDO ATUAL: " + account.getBalance() + 
 							"\nSALDO ANTERIOR: " + this.getBalanceBefore());
 			
 	}
