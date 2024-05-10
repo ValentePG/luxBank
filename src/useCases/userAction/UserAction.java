@@ -21,14 +21,15 @@ public class UserAction {
 		AccountBank conta1 = registro.createAccount();
 		MenuInitializer menu = new MenuInitializer();
 		ArrayList<Options> options = menu.createList();
-		
+
 		options.get(0).optionAction(conta1);
 		
 		options.get(1).optionAction(conta1);
 		
 		options.get(2).optionAction(conta1);
 		
-
+		
+		
 		
 		
 	}
